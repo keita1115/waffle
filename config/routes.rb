@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       sessions: "admin/sessions"
   }
 
-namespace :admin do
+  namespace :admin do
     root to: 'homes#top'
     resources :items
     resources :genres
