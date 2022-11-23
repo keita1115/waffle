@@ -37,8 +37,8 @@
       <td><%= address.post_number %></td>
       <td><%= address.address %></td>
       <td><%= address.name %></td>
-      <td><%= link_to '編集する', edit_address_path(address.id), class: "btn btn-success"  %>
-      <%= link_to '削除する', address_path(address.id), method: :delete,  class: "btn btn-danger" %></td>
+      <td><%= link_to '編集する', edit_address_path(address.id), class: "btn btn-success"  %></td>
+      </td><%= link_to '削除する', address_path(address.id), method: :delete,  class: "btn btn-danger" %></td>
     </tr>
     <% end %>
     </tbody>
