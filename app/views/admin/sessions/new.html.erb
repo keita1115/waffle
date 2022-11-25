@@ -3,22 +3,22 @@
     <div class='col-md-8 offset-2'>
       <h3 class="my-4 mt-5">管理者ログイン</h3>
 
-        <%= form_with model: @admin, url: admin_session_path do |f| %>
+      <%= form_with model: @admin, url: admin_session_path do |f| %>
 
-          <div class="field text-center mb-4">
-            <%= f.label :"メールアドレス", class: "mr-3" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email",size: "30px" %>
-          </div>
+        <div class="field text-center mb-4">
+          <%= f.label :"メールアドレス", class: "mr-3" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",size: "30px" %>
+        </div>
 
-          <div class="field text-center">
-            <%= f.label :"パスワード", class: "mr-5" %>
-            <%= f.password_field :password, autocomplete: "current-password",size: "30px" %>
-          </div>
+        <div class="field text-center">
+          <%= f.label :"パスワード", class: "mr-5" %>
+          <%= f.password_field :password, autocomplete: "current-password",size: "30px" %>
+        </div>
 
-          <div class="actions text-center mt-5">
-            <%= f.submit "ログイン",class:"btn btn-primary px-5 mt-4" %>
-          </div>
-        <% end %>
+        <div class="actions text-center mt-5">
+          <%= f.submit "ログイン",class:"btn btn-primary px-5 mt-4" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
