@@ -22,17 +22,17 @@
            </li>
            <li>
              <%= link_to items_path,class: 'btn' do%>
-                商品一覧
+                <i class="fa-brands fa-shopify"></i>商品一覧
              <% end %>
            </li>
            <li>
              <%= link_to cart_items_path(current_customer),class: 'btn' do%>
-                カート
+                <i class="fa-solid fa-cart-shopping"></i>カート
              <% end %>
            </li>
            <li>
              <%= link_to destroy_customer_session_path, method: :delete,class: 'btn' do%>
-                ログアウト
+                <i class="fas fa-sign-out-alt"></i>ログアウト
              <% end %>
               </li>
           <% elsif admin_signed_in? %>
@@ -69,7 +69,7 @@
            </li>
            <li>
              <%= link_to  items_path,class: 'btn' do%>
-               商品一覧
+               <i class="fa-brands fa-shopify"></i>商品一覧
              <% end %>
            </li>
            <li>
