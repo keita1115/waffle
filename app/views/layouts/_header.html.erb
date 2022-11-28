@@ -38,12 +38,12 @@
           <% elsif admin_signed_in? %>
            <li>
              <%= link_to admin_items_path,class: 'btn' do%>
-                商品一覧
+                <i class="fa-brands fa-shopify"></i>商品一覧
              <% end %>
            </li>
            <li>
              <%= link_to admin_customers_path,class: 'btn' do%>
-                会員一覧
+                <i class="fa-solid fa-user"></i>会員一覧
              <% end %>
            </li>
            <li>
@@ -58,7 +58,7 @@
            </li>
            <li>
              <%= link_to destroy_admin_session_path, method: :delete,class: 'btn' do%>
-                ログアウト
+                <i class="fas fa-sign-out-alt"></i>ログアウト
              <% end %>
            </li>
           <% else %>
