@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h3 class="my-4 mt-5">商品編集</h3>
+
+      <!--form_with記述-->
+      <%= form_with model: @item, url: admin_item_path(@item), method: :patch, local: true do |f| %>
+
+  <!--商品画像-->
+  <div class="field text-center mt-4">
+    <%= f.label :"商品画像" %>
+    <%= f.file_field :item_image, accept: "image/*" %>
+  </div>
+
+  <!--商品名-->
+  <div class="field text-center mt-4">
+    <%= f.label :"商品名", class: "mr-3" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <!--商品説明-->
+  <div class="field text-center mt-4">
+    <%= f.label :"商品説明", class: "mr-3" %>
+    <%= f.text_area :introduction %>
+  </div>
+
+  <!--ジャンル--><!--Q:ジャンルを選択するフォームがわからない-->
+  <div class="field text-center mt-4">
+    <%= f.label :"ジャンル", class: "mr-3" %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+
+  <!--税抜価格-->
+  <div class="field text-center mt-4">
+    <%= f.label :"税抜価格", class: "mr-3" %>
+    <%= f.text_field :price %>円
+  </div>
+
+  <!--販売ステータス--><!--Q:ステータスを選択するボタンがわからない-->
+  <div class="field text-center mt-4">
+    <%= f.label :"販売ステータス", class: "mr-3" %>
+    <%= f.radio_button :is_active, true %>
+    <%= f.label :販売中 %>
+    <%= f.radio_button :is_active, false %>
+    <%= f.label :販売停止中 %>
+  </div>
+
+  <!--変更ボタン-->
+  <div class="actions text-center mt-4">
+    <%= f.submit "変更を保存", class: "btn btn-primary" %>
+  </div>
+<% end %>
