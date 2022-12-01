@@ -20,19 +20,19 @@
         <tbody>
           <% @items.each do |item| %>
           <tr>
-            <!--商品ID-->
+           
             <td><%= item.id %></td>
-            <!--商品名-->
+            
             <td>
               <%= link_to admin_item_path(item.id) do %>
               <%= item.name %>
               <% end %>
             </td>
-            <!--税抜価格-->
+            
             <td><%= number_to_currency(item.price, unit: "¥", format: "%u %n" ) %></td>
-            <!--ジャンル-->
+            
             <td><%= item.genre.name %></td>
-            <!--Q：販売ステータスの表記の仕方-->
+           
             <th>
               <% if item.is_active == true %>
               <p class = "text-success">
@@ -48,7 +48,6 @@
           <% end %>
         </tbody>
       </table>
-        <!--ページネーション必要（３P毎表記）-->
         <%= paginate @items %>
     </div>
   </div>
