@@ -4,7 +4,7 @@
       <h3 class="my-4 mt-5">商品新規登録</h3>
 
       <%= form_with model: @item, url: admin_items_path, method: :post, local: true do |f| %>
-       
+
        <table class="table table-borderless table-sm">
         <div class="field">
           <tr>
@@ -42,13 +42,11 @@
         </div>
 
         <div class="field">
-          <tr>
-            <td><%= f.label :"販売ステータス" %></td>
-            <td><%= f.radio_button :is_active, true %></td>
-            <td><%= f.label :is_active, "販売中", value: true %></td>
-            <td><%= f.radio_button :is_active, false %></td>
-            <td><%= f.label  :is_active, "販売停止中", value: false %></td>
-          </tr>
+          <%= f.label :"販売ステータス" %>
+          <%= f.radio_button :is_active, true %>
+          <%= f.label :is_active, "販売中", value: true %>
+          <%= f.radio_button :is_active, false %>
+          <%= f.label  :is_active, "販売停止中", value: false %>
         </div>
 
         <div class="actions">
