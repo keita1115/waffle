@@ -3,53 +3,59 @@
     <div class="col-md-8 offset-2">
       <h3 class="my-4 mt-5">商品新規登録</h3>
 
-
-      
       <%= form_with model: @item, url: admin_items_path, method: :post, local: true do |f| %>
-
-        
-        <div class="field text-center mt-4">
-          <%= f.label :"商品画像" %>
-          <%= f.file_field :item_image, accept: "image/*" %>
-        </div>
-
-        
-        <div class="field text-center mt-4">
-          <%= f.label :"商品名", class: "mr-3"%>
-          <%= f.text_field :name %>
-        </div>
-
        
-        <div class="field text-center mt-4">
-          <%= f.label :"商品説明", class: "mr-3" %>
-          <%= f.text_area :introduction %>
+       <table class="table table-borderless table-sm">
+        <div class="field">
+          <tr>
+            <td><%= f.label :"商品画像" %></td>
+            <td><%= f.file_field :item_image, accept: "image/*" %></td>
+          </tr>
         </div>
 
-       
-        <div class="field text-center mt-4">
-          <%= f.label :"ジャンル" %>
-          <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"商品名", class: "mr-3"%></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
         </div>
 
-        
-        <div class="field text-center mt-4">
-          <%= f.label :"税抜価格", class: "mr-3" %>
-          <%= f.text_field :price %>円
+        <div class="field">
+          <tr>
+            <td><%= f.label :"商品説明", class: "mr-3" %></td>
+            <td><%= f.text_area :introduction %></td>
+          </tr>
         </div>
 
-        
-        <div class="field text-center mt-4">
-          <%= f.label :"販売ステータス" %>
-          <%= f.radio_button :is_active, true %>
-          <%= f.label :is_active, "販売中", value: true %>
-          <%= f.radio_button :is_active, false %>
-          <%= f.label  :is_active, "販売停止中", value: false %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ジャンル" %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
+          </tr>
         </div>
 
-        
-        <div class="actions text-center mt-4">
-          <%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"税抜価格", class: "mr-3" %></td>
+            <td><%= f.text_field :price %>円</td>
+          </tr>
         </div>
+
+        <div class="field">
+          <tr>
+            <td><%= f.label :"販売ステータス" %></td>
+            <td><%= f.radio_button :is_active, true %></td>
+            <td><%= f.label :is_active, "販売中", value: true %></td>
+            <td><%= f.radio_button :is_active, false %></td>
+            <td><%= f.label  :is_active, "販売停止中", value: false %></td>
+          </tr>
+        </div>
+
+        <div class="actions">
+          <td></td>
+            <td><%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %></td>
+        </div>
+       </table>
 　　　<% end %>
 　　</div>
 　</div>
