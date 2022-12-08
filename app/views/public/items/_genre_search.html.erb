@@ -1,0 +1,14 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class= "text-center" >ジャンル検索</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% genres.each do |genre| %>
+    <tr>
+      <th class= "text-center" ><%= link_to genre.name, items_path(genre_id: genre.id) %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
