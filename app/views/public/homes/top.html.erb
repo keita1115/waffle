@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+    <%= render "public/items/genre_search", genres: @genres %>
+    </div>
+
+    <div class="col-8 ml-2">
+      <div class = "top-image ml-4">
+        <%= image_tag "strawberry-tarts-gadca53cc0_640", size:"640×426" %>
+          <p style="position:absolute; top:130px; left:180px; background-color:rgba(0,0,0,0.5); color:#FFF;">
+            <br>
+              ようこそ、WAFFLE SUBURBへ！<br>
+              このサイトは、ワッフル販売のECサイトになります。<br>
+              会員でない方も商品の閲覧はできますが、<br>
+              購入には会員登録が必要になります。<br>
+            <br>
+          </p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <table class="table mt-4">
+              <thead>
+                <tr>
+                  <th>新着商品</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="contents" style="display:flex; flex-wrap:wrap;">
+          <% @items.each do |item| %>
+            <div class="mr-4 mt-4">
+              <%= link_to item_path(item) do %>
+                <%= image_tag item.get_item_image, size:"200x120" %>
+              <% end %>
+              <p class="text-center"><strong><%= item.name %></strong></p>
+              <p class="text-center"><strong>￥<%= item.with_tax_price.to_s(:dalimited) %></strong></p>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-right"><strong><%= link_to "全ての商品を見る>",items_path %></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
