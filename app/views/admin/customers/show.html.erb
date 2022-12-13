@@ -1,4 +1,5 @@
 <div class ="container">
+   <%= render 'show' ,customer: @customer %>
   <div class="text-center">
     <table class="table">
       <th><%= link_to '編集する', edit_admin_customer_path(@customer), class: "btn btn-sm btn-success" %></th>
