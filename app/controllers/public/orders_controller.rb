@@ -70,7 +70,4 @@ end
     params.require(:order).permit(:payment_method, :post_number, :address, :name, :item_id, :total_payment)
   end
 
-  def address_params
-    params.require(:order).permit(:name, :address,:post_number)
-  end
 end
