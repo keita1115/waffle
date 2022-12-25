@@ -1,0 +1,38 @@
+<h3>注文履歴詳細</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>購入者</th>
+      <td>
+        <%= link_to admin_customer_path(@order.customer_id)  do %>
+          <%= @order.customer.last_name %><%= @order.customer.first_name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>注文日</th>
+      <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+    <tr>
+      <th>配送先</th>
+      <td>
+        <p>〒<%= @order.post_number %></p>
+        <p><%= @order.address %></p>
+        <p><%= @order.name %></p>
+      </td>
+    </tr>
+    <tr>
+      <th>支払い方法</th>
+      <td><%= @order.payment_method %><td>
+    </tr>
+    <tr>
+      <th>注文ステータス</th>
+      <td>
+        <%= form_with(model: @order, url: admin_order_path(@order.id), method: :patch, local: true) do |f| %>
+        <%= f.select :order_status, Order.order_statuses_i18n.invert, {prompt: false}, class: "order_status" %>
+        <%= f.submit "更新" , class: "btn btn-success" %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
